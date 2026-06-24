@@ -12,7 +12,7 @@ abstract: >
 authors:
   - family-names: Dessi
     given-names: Cristian
-    orcid: "0009-0000-5708-571X"  # Add your ORCID ID here: https://orcid.org
+    orcid: ""  # Add your ORCID ID here: https://orcid.org
     affiliation: "Dessign Innovation"
     email: cdessi@dessigninnovation.it
     country: IT
@@ -45,4 +45,4 @@ references:
       - family-names: Dessi
         given-names: Cristian
     year: 2026
-    notes: "White Paper available on Zenodo — https://doi.org/10.5281/zenodo.20826793"
+    notes: "White Paper available on Zenodo — DOI pending"

@@ -1,0 +1,197 @@
+# GUIDA COMPLETA — GitHub + Zenodo
+# Portale Scuola AI / EduRAG
+# Segui i passi nell'ordine esatto
+
+══════════════════════════════════════════════════════════════
+FASE 1 — CREA IL REPOSITORY GITHUB
+══════════════════════════════════════════════════════════════
+
+PASSO 1 — Vai su github.com (loggato come vrdessign)
+
+PASSO 2 — Clicca "+" in alto a destra → "New repository"
+
+PASSO 3 — Compila il form:
+  Repository name:  portale-scuola-ai
+  Description:      EduRAG — Dual RAG Educativo (D-RAG-E) architecture
+                    for sovereign AI in national education systems
+  Visibility:       ✅ Public
+  Initialize:       ✅ spunta "Add a README file" (lo sovrascriveremo)
+  .gitignore:       None (lo carichiamo noi)
+  License:          None (lo gestiamo noi tramite CITATION.cff)
+
+PASSO 4 — Clicca "Create repository"
+
+──────────────────────────────────────────────────────────────
+PASSO 5 — Carica i file (metodo drag & drop, nessun terminale)
+
+  5a. Clicca "uploading an existing file" (link nella pagina vuota)
+      OPPURE: tasto "Add file" → "Upload files"
+
+  5b. Carica questi file dalla cartella del progetto v2:
+      ✅ main.py
+      ✅ config.py
+      ✅ requirements.txt
+      ✅ docker-compose.yml
+      ✅ Dockerfile
+      ✅ .env.example
+      ✅ README.md          (quello che hai scaricato da qui)
+      ✅ CITATION.cff
+      ✅ .zenodo.json
+      ✅ .gitignore
+
+  5c. Per le cartelle app/ e data/:
+      GitHub non accetta cartelle vuote via drag & drop.
+      Usa questo metodo per ogni file dentro app/:
+
+      → Clicca "Add file" → "Create new file"
+      → Nel campo nome scrivi:  app/rag/dual_rag.py
+      → Incolla il contenuto del file
+      → Clicca "Commit new file"
+      → Ripeti per ogni file .py del progetto
+
+  5d. File da creare in questo modo (uno per uno):
+      app/__init__.py                    (file vuoto)
+      app/rag/__init__.py                (file vuoto)
+      app/rag/dual_rag.py
+      app/rag/embeddings.py
+      app/rag/vectorstore.py
+      app/rag/llm_local.py
+      app/rag/document_processor.py
+      app/api/__init__.py                (file vuoto)
+      app/api/routes/__init__.py         (file vuoto)
+      app/api/routes/studente.py
+      app/api/routes/docente.py
+      app/api/routes/dirigente.py
+      app/api/routes/admin.py
+      app/auth/__init__.py               (file vuoto)
+      app/auth/utils.py
+      app/auth/routes.py
+      app/database/__init__.py           (file vuoto)
+      app/database/models.py
+      app/database/session.py
+      data/ministeriale/README.md
+      data/uploads/.gitkeep             (file vuoto)
+      .github/workflows/release.yml
+
+PASSO 6 — Verifica che il repository sia visibile e il README
+          si mostri correttamente nella pagina principale.
+
+══════════════════════════════════════════════════════════════
+FASE 2 — COLLEGA ZENODO A GITHUB
+══════════════════════════════════════════════════════════════
+
+PASSO 7 — Vai su zenodo.org
+
+PASSO 8 — Clicca "Log in" → "Login with GitHub"
+          (NON creare un account separato con email)
+          Autorizza Zenodo ad accedere al tuo account GitHub.
+
+PASSO 9 — In Zenodo: clicca sul tuo nome in alto a destra
+          → "GitHub" (nella lista a sinistra del profilo)
+
+PASSO 10 — Trova "portale-scuola-ai" nella lista dei tuoi repository
+           → Attiva l'interruttore (ON)
+           Zenodo ora monitora le release di quel repository.
+
+══════════════════════════════════════════════════════════════
+FASE 3 — CARICA IL WHITE PAPER (DOI separato per il paper)
+══════════════════════════════════════════════════════════════
+
+PASSO 11 — In Zenodo: clicca "+ New Upload" (pulsante verde)
+
+PASSO 12 — Compila il form per il White Paper EN:
+  Upload type:  Publication → Report
+  Carica:       WhitePaper_EduRAG_EN.docx  +  versione PDF
+  Title:        EduRAG: A Dual Retrieval-Augmented Generation
+                Architecture for Sovereign AI in National Education Systems
+  Authors:      Dessi, Cristian — Dessign Innovation — Italy
+  Description:  [incolla l'abstract inglese dal White Paper]
+  Keywords:     artificial intelligence, education, RAG, LLM, EdTech,
+                AI Act, GDPR, MIM 2025, dual RAG, sovereign AI
+  License:      Creative Commons Attribution Non Commercial 4.0
+  Version:      1.0
+  Publication date: 2026-06-24
+
+PASSO 13 — ✅ COMPLETATO — DOI: 10.5281/zenodo.20826793
+           COPIA QUESTO DOI — ti serve per i passi successivi.
+
+PASSO 14 — Ripeti il PASSO 11-13 per il White Paper IT:
+  Title:        Portale Scuola AI — L'Intelligenza Artificiale Sovrana
+                al Servizio dell'Istruzione Italiana ed Europea
+
+══════════════════════════════════════════════════════════════
+FASE 4 — AGGIORNA IL README CON IL DOI REALE
+══════════════════════════════════════════════════════════════
+
+PASSO 15 — Torna su GitHub → repository portale-scuola-ai
+
+PASSO 16 — Apri README.md → clicca matita (Edit)
+
+PASSO 17 — ✅ COMPLETATO — DOI reale: 10.5281/zenodo.20826793
+           Esempio: 10.5281/zenodo.14823456
+
+PASSO 18 — Fai lo stesso in CITATION.cff e .zenodo.json
+
+PASSO 19 — Commit "Update DOI references"
+
+══════════════════════════════════════════════════════════════
+FASE 5 — CREA LA PRIMA RELEASE (genera DOI per il codice)
+══════════════════════════════════════════════════════════════
+
+PASSO 20 — In GitHub: clicca "Releases" (sidebar destra)
+           → "Create a new release"
+
+PASSO 21 — Compila:
+  Tag:          v2.0.0
+  Title:        EduRAG v2.0.0 — Dual RAG Educativo
+  Description:  (copia il testo dal file .github/workflows/release.yml)
+
+PASSO 22 — Clicca "Publish release"
+
+PASSO 23 — Torna su Zenodo → dopo pochi minuti apparirà
+           automaticamente una nuova entry con DOI per il codice.
+           Questo DOI è SEPARATO da quello del White Paper.
+
+══════════════════════════════════════════════════════════════
+FASE 6 — PUBBLICA SU RESEARCHGATE E SSRN
+══════════════════════════════════════════════════════════════
+
+PASSO 24 — ResearchGate (researchgate.net):
+  → Crea account → "Add research" → "Upload"
+  → Carica WhitePaper_EduRAG_EN.docx
+  → Tipo: Technical Report
+  → Aggiungi DOI Zenodo nel campo apposito
+  → Aggiungi tutti i keyword
+
+PASSO 25 — SSRN (ssrn.com):
+  → Submit Paper → Social Sciences → Education
+  → Carica PDF del White Paper EN
+  → Compila il form con abstract e keyword
+  → Ottieni SSRN ID (citabile come secondo identificatore)
+
+══════════════════════════════════════════════════════════════
+RIEPILOGO DOI/ID CHE AVRAI ALLA FINE
+══════════════════════════════════════════════════════════════
+
+  DOI White Paper EN:    10.5281/zenodo.20826793  ✅ OTTENUTO
+  DOI White Paper IT:    10.5281/zenodo.YYYYYYY
+  DOI Codice v2.0.0:     10.5281/zenodo.ZZZZZZZ  (generato auto)
+  SSRN ID:               SSRN-NNNNNNN
+  ISBN:                  (da isbn.it — richiesta in corso)
+  GitHub:                github.com/vrdessign/portale-scuola-ai
+
+══════════════════════════════════════════════════════════════
+NOTE IMPORTANTI
+══════════════════════════════════════════════════════════════
+
+❌ NON caricare mai su GitHub:
+   - File .env con chiavi reali
+   - Database .sqlite o .db con dati utenti
+   - Libri di testo sotto copyright (cartella data/istituti/)
+   - Chiavi API (OpenAI, Anthropic, ecc.)
+
+✅ Prima di ogni commit controlla che .gitignore funzioni:
+   Nella pagina GitHub, i file .env non devono apparire.
+
+✅ Il file .env.example con valori placeholder è OK pubblicarlo
+   (serve agli sviluppatori per sapere quali variabili configurare).

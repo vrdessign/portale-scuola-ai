@@ -1,0 +1,119 @@
+version: "3.9"
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Portale Scuola AI — Docker Compose per SuperPOD
+# Avvia: docker compose up -d
+# ══════════════════════════════════════════════════════════════════════════════
+
+services:
+
+  # ── 1. vLLM — LLM locale su GPU H100 ────────────────────────────────────────
+  vllm:
+    image: vllm/vllm-openai:latest
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    command: >
+      --model meta-llama/Llama-3.1-70B-Instruct
+      --tensor-parallel-size 2
+      --max-model-len 8192
+      --gpu-memory-utilization 0.85
+      --host 0.0.0.0
+      --port 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - huggingface_cache:/root/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s   # LLaMA 70B ci vuole tempo per caricarsi
+    restart: unless-stopped
+
+  # ── 2. Qdrant — Vector DB locale ─────────────────────────────────────────────
+  qdrant:
+    image: qdrant/qdrant:v1.11.4
+    ports:
+      - "6333:6333"
+      - "6334:6334"    # gRPC
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    environment:
+      - QDRANT__SERVICE__HTTP_PORT=6333
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6333/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  # ── 3. PostgreSQL ─────────────────────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: portale
+      POSTGRES_PASSWORD: portale
+      POSTGRES_DB: portale_scuola
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U portale"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  # ── 4. Portale Scuola AI — Applicazione principale ───────────────────────────
+  portale:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      # LLM
+      - LLM_BASE_URL=http://vllm:8000/v1
+      - LLM_MODEL=meta-llama/Llama-3.1-70B-Instruct
+      # Embeddings
+      - EMBED_MODEL=intfloat/multilingual-e5-large
+      - EMBED_DEVICE=cuda
+      # Qdrant
+      - QDRANT_URL=http://qdrant:6333
+      # Database
+      - DATABASE_URL=postgresql+asyncpg://portale:portale@postgres:5432/portale_scuola
+      # Auth
+      - SECRET_KEY=${SECRET_KEY:-cambia_questa_chiave_in_produzione}
+      # App
+      - APP_HOST=0.0.0.0
+      - APP_PORT=5000
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      vllm:
+        condition: service_healthy
+      qdrant:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1      # 1 GPU per gli embeddings
+              capabilities: [gpu]
+    restart: unless-stopped
+
+volumes:
+  huggingface_cache:
+  qdrant_storage:
+  postgres_data:

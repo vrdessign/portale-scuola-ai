@@ -230,4 +230,3 @@ It is protected under Italian copyright law (L. 633/1941) and trade secret law
 - LinkedIn: linkedin.com/in/cristian-dessi
 
 © 2026 Dessign Innovation — Cristian Dessi. All rights reserved.
-

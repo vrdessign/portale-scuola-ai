@@ -1,0 +1,38 @@
+# ── Framework ─────────────────────────────────────────────────────────────────
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.9
+
+# ── Database ──────────────────────────────────────────────────────────────────
+sqlalchemy[asyncio]==2.0.36
+asyncpg==0.29.0              # PostgreSQL async driver
+alembic==1.13.3              # Migrazioni DB
+
+# ── Auth ──────────────────────────────────────────────────────────────────────
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# ── Embeddings locali ─────────────────────────────────────────────────────────
+sentence-transformers==3.2.1
+torch==2.4.0                 # CUDA build installato separatamente su SuperPOD
+transformers==4.45.0
+
+# ── Vector DB ─────────────────────────────────────────────────────────────────
+qdrant-client==1.11.3
+
+# ── LLM client (vLLM espone endpoint OpenAI-compatible) ──────────────────────
+httpx==0.27.2
+
+# ── Caricamento documenti ─────────────────────────────────────────────────────
+pymupdf==1.24.11             # PDF
+docx2txt==0.8                # DOCX
+
+# ── Validazione dati ──────────────────────────────────────────────────────────
+pydantic[email]==2.9.2
+
+# ── Template HTML ─────────────────────────────────────────────────────────────
+jinja2==3.1.4
+
+# ── Utilità ───────────────────────────────────────────────────────────────────
+python-dotenv==1.0.1
+aiofiles==24.1.0
