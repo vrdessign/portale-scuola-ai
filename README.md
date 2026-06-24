@@ -216,7 +216,7 @@ You may use, adapt and share for non-commercial purposes with attribution.
 Commercial use requires written authorisation from Dessign Innovation.
 
 **Architecture:** The D-RAG-E (Dual RAG Educativo) architecture is an original intellectual
-contribution of Cristian Dessi / Dessign Innovation (VAT IT02619650909).
+contribution of Cristian Dessi / Dessign Innovation (VAT IT01250020953).
 It is protected under Italian copyright law (L. 633/1941) and trade secret law
 (D.Lgs. 63/2018). Deposited with SIAE and UIBM.
 
