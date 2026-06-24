@@ -3,8 +3,8 @@
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-green.svg)](https://fastapi.tiangolo.com/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20826793.svg)](https://doi.org/10.5281/zenodo.20826793)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20827996.svg)](https://doi.org/10.5281/zenodo.20827996)
+[![DOI White Paper EN](https://zenodo.org/badge/DOI/10.5281/zenodo.20826793.svg)](https://doi.org/10.5281/zenodo.20826793)
+[![DOI White Paper IT](https://zenodo.org/badge/DOI/10.5281/zenodo.20828676.svg)](https://doi.org/10.5281/zenodo.20828676)
 
 > **DOI:** `10.5281/zenodo.20826793` — [View on Zenodo](https://doi.org/10.5281/zenodo.20826793)
 
@@ -19,7 +19,7 @@ The system introduces a two-tier hierarchical Retrieval-Augmented Generation sys
 Compliant with **EU AI Act**, **GDPR**, and **Italian MIM 2025 Guidelines**.
 
 📄 **White Paper (EN):** [EduRAG: A Dual RAG Architecture for Sovereign AI in National Education Systems](https://doi.org/10.5281/zenodo.20826793)
-📄 **White Paper (IT):** Portale Scuola AI — L'Intelligenza Artificiale Sovrana al Servizio dell'Istruzione *(DOI pending — publishing soon on Zenodo)*
+📄 **White Paper (IT):** [Portale Scuola AI — L'Intelligenza Artificiale Sovrana al Servizio dell'Istruzione Italiana ed Europea](https://doi.org/10.5281/zenodo.20828676)
 
 ---
 
