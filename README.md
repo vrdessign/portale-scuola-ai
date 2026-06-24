@@ -224,9 +224,10 @@ It is protected under Italian copyright law (L. 633/1941) and trade secret law
 ## Contact
 
 **Cristian Dessi** — Founder & CEO, Dessign Innovation
-- Email: vrdessign@gmail.com
-- Commercial: commerciale@tourvirtuale.digital
-- Web: www.dessign.it
+- Email: cdessi@dessigninnovation.it
+- Commercial: cdessi@dessigninnovation.it
+- Web: www.dessigninnovation.it
 - LinkedIn: linkedin.com/in/cristian-dessi
 
 © 2026 Dessign Innovation — Cristian Dessi. All rights reserved.
+
