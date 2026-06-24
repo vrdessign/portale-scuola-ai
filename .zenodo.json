@@ -1,0 +1,49 @@
+{
+  "title": "EduRAG — Dual RAG Educativo (D-RAG-E) v2.0.0",
+  "description": "EduRAG (Portale Scuola AI) is a SaaS platform implementing the Dual RAG Educativo (D-RAG-E) architecture — a two-tier hierarchical Retrieval-Augmented Generation system for sovereign AI integration in national education systems. RAG Layer 1 grounds responses in ministerial curricula; RAG Layer 2 personalises narrative per institution based on adopted textbooks. Fully compliant with EU AI Act, GDPR, and Italian MIM 2025 Guidelines. Stack: vLLM + LLaMA 3.1 70B + sentence-transformers (multilingual-e5-large) + Qdrant + FastAPI + PostgreSQL. Docker-compose ready for SuperPOD deployment.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "cc-by-nc-4.0",
+  "creators": [
+    {
+      "name": "Dessi, Cristian",
+      "affiliation": "Dessign Innovation",
+      "orcid": ""
+    }
+  ],
+  "keywords": [
+    "artificial intelligence",
+    "education",
+    "retrieval-augmented generation",
+    "RAG",
+    "LLM",
+    "EdTech",
+    "AI Act",
+    "GDPR",
+    "MIM 2025",
+    "Italian school system",
+    "Arab World education",
+    "digital sovereignty",
+    "dual RAG",
+    "vLLM",
+    "sentence-transformers",
+    "Qdrant",
+    "FastAPI",
+    "sovereign AI"
+  ],
+  "related_identifiers": [
+    {
+      "scheme": "url",
+      "identifier": "https://github.com/vrdessign/portale-scuola-ai",
+      "relation": "isSupplementTo"
+    },
+    {
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.20826793",
+      "relation": "isVersionOf",
+      "resource_type": "publication-report"
+    }
+  ],
+  "language": "eng",
+  "version": "2.0.0"
+}

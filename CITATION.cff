@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+message: "If you use this software or architecture in your research, please cite it as below."
+type: software
+title: "EduRAG — Dual RAG Educativo (D-RAG-E)"
+abstract: >
+  EduRAG is a SaaS platform implementing the Dual RAG Educativo (D-RAG-E)
+  architecture — a two-tier hierarchical Retrieval-Augmented Generation system
+  for sovereign AI integration in national education systems. RAG Layer 1
+  grounds responses in ministerial curricula; RAG Layer 2 personalises narrative
+  per institution based on adopted textbooks. Compliant with EU AI Act,
+  GDPR, and Italian MIM 2025 Guidelines.
+authors:
+  - family-names: Dessi
+    given-names: Cristian
+    orcid: ""  # Add your ORCID ID here: https://orcid.org
+    affiliation: "Dessign Innovation"
+    email: vrdessign@gmail.com
+    country: IT
+version: "2.0.0"
+date-released: "2026-06-24"
+url: "https://github.com/vrdessign/portale-scuola-ai"
+repository-code: "https://github.com/vrdessign/portale-scuola-ai"
+license: "CC-BY-NC-4.0"
+keywords:
+  - artificial intelligence
+  - education
+  - retrieval-augmented generation
+  - RAG
+  - LLM
+  - EdTech
+  - AI Act
+  - GDPR
+  - MIM 2025
+  - Italian school system
+  - Arab World education
+  - digital sovereignty
+  - dual RAG
+  - vLLM
+  - sentence-transformers
+  - Qdrant
+references:
+  - type: article
+    title: "EduRAG: A Dual Retrieval-Augmented Generation Architecture for Sovereign AI in National Education Systems"
+    authors:
+      - family-names: Dessi
+        given-names: Cristian
+    year: 2026
+    notes: "White Paper available on Zenodo — DOI pending"

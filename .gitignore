@@ -1,0 +1,91 @@
+# ── Ambiente Python ───────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# ── Variabili d'ambiente e segreti ────────────────────────────────────────────
+.env
+.env.*
+!.env.example          # questo file è OK pubblicarlo
+*.key
+*.pem
+secrets/
+
+# ── Database locali ───────────────────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+data/uploads/
+data/istituti/         # corpus RAG L2 — dati privati degli istituti
+
+# ── Vectorstore locale ────────────────────────────────────────────────────────
+data/qdrant_storage/
+chroma_db/
+*.chroma
+
+# ── Modelli scaricati localmente ──────────────────────────────────────────────
+models/
+*.bin
+*.safetensors
+*.gguf
+huggingface_cache/
+.cache/
+
+# ── Log e output temporanei ───────────────────────────────────────────────────
+logs/
+*.log
+*.tmp
+*.temp
+
+# ── Editor e OS ───────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Replit (non necessario su GitHub) ────────────────────────────────────────
+.replit
+replit.nix
+.local/
+.upm/
+.pythonlibs/
+.cache/
+
+# ── Node (se usi docx generation) ────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+
+# ── Docker ────────────────────────────────────────────────────────────────────
+# (docker-compose.yml e Dockerfile SI pubblicano — sono documenti di deploy)
+.docker/
+
+# ── File di upload degli utenti ───────────────────────────────────────────────
+data/uploads/*
+!data/uploads/.gitkeep
+data/ministeriale/*
+!data/ministeriale/.gitkeep
+!data/ministeriale/README.md
